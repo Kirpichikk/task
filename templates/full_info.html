@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Profile</title>
+</head>
+<body>
+    <h1>User Profile</h1>
+
+    <h2>Personal Information</h2>
+    <ul>
+        <li><strong>Gender:</strong> {{ data.gender }}</li>
+        <li><strong>Title:</strong> {{ data.name.title }}</li>
+        <li><strong>Full Name:</strong> {{ data.name.first }} {{ data.name.last }}</li>
+        <li><strong>Email:</strong> {{ data.email }}</li>
+        <li><strong>Phone:</strong> {{ data.phone }}</li>
+        <li><strong>Cell:</strong> {{ data.cell }}</li>
+    </ul>
+
+    <h2>Location</h2>
+    <ul>
+        <li><strong>Street:</strong> {{ data.location.street.number }} {{ data.location.street.name }}</li>
+        <li><strong>City:</strong> {{ data.location.city }}</li>
+        <li><strong>State:</strong> {{ data.location.state }}</li>
+        <li><strong>Country:</strong> {{ data.location.country }}</li>
+        <li><strong>Postcode:</strong> {{ data.location.postcode }}</li>
+        <li><strong>Coordinates:</strong>
+            Latitude: {{ data.location.coordinates.latitude }},
+            Longitude: {{ data.location.coordinates.longitude }}
+        </li>
+    </ul>
+
+    <h2>Photos</h2>
+    <div>
+        <img src="{{ data.picture.large }}" alt="Large portrait">
+    </div>
+
+    <h2>Additional Details</h2>
+    <ul>
+        <li><strong>Date of Birth:</strong> {{ data.dob.date }} (Age: {{ data.dob.age }})</li>
+        <li><strong>Registered:</strong> {{ data.registered.date }} ({{ data.registered.age }} years ago)</li>
+        <li><strong>Nationality:</strong> {{ data.nat }}</li>
+    </ul>
+</body>
+</html>

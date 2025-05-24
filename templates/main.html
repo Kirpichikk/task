@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main</title>
+</head>
+<body>
+<link rel="shortcut icon" href="#" />
+    <form action = "" method="POST">
+        <input type = "text" name = "number">
+        <input type = "submit">
+    </form>
+
+    {% if error %}
+    <br>  Введите количество требуемых пользователей
+    {% endif %}
+    <table>
+        <tr>
+            <th> gender</th>
+            <th>first name</th>
+            <th> last name</th>
+            <th> number phone</th>
+            <th> email </th>
+            <th> location </th>
+            <th> photo </th>
+            <th> extra info </th>
+        </tr>
+
+            {% for i in data %}
+        <tr>
+            <th> {{ i['gender'] }}</th>
+            <th> {{ i['name']['first'] }} </th>
+            <th> {{ i['name']['last'] }} </th>
+            <th> {{ i['phone'] }} </th>
+            <th> {{ i['email'] }} </th>
+            <th> {{ i['location']['city'] }} </th>
+            <th> <img src = {{ i['picture']['thumbnail'] }} > </th>
+            <th> <a href = " {{ url_for('user_handler', user_id = loop.index) }} ">more info</a></th>
+        </tr>
+            {% endfor %}
+
+    </table>
+</body>
+</html>
