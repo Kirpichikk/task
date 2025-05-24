@@ -3,7 +3,8 @@
 <ol>
   <li>Склонируйте данный репозиторий к себе на компьютер с помощью команды</li>
   ```
-    git clone 
+  git clone https://github.com/Kirpichikk/task.git
+  
   ``` 
   
 </ol>
